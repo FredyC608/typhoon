@@ -1,6 +1,8 @@
 import streamlit as st
 
-st.header("Mental Health Questionaire")
+st.header("Mental Health")
+
+st.subheader("Mission Statement")
 
 st.write("Mental health is a huge issue for college students, as this is a very different time for students."
 " Not only are students in a very different environment, some may struggle academically or financially in a way "
