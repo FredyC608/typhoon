@@ -1,5 +1,6 @@
 import streamlit as st
 import pickle as p
+import predict_depression as pdp
 
 # Custom CSS for styling
 st.markdown("""
@@ -11,8 +12,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Header
-st.markdown('<p class="title">📝 Mental Well-being Questionnaire</p>', unsafe_allow_html=True)
-st.markdown('<p class="info">Help us assess potential risk factors for depression. Your responses are not recorded.</p>', unsafe_allow_html=True)
+st.markdown('<h1 class="title">📝 Mental Health Questionnaire</h1>', unsafe_allow_html=True)
+# st.markdown('<p class="info">Help us assess potential risk factors for depression. Your responses are not recorded.</p>', unsafe_allow_html=True)
 
 # Options for dropdowns
 options = [0,1,2,3,4,5]
@@ -27,7 +28,7 @@ yes_no = ['No', 'Yes']
 
 # Input Fields
 with st.container():
-    st.markdown('<div class="input-container">', unsafe_allow_html=True)
+    # st.markdown('<div class="input-container">', unsafe_allow_html=True)
 
     academic_pressure = st.selectbox("📚 Academic Pressure", options, index=0)
     work_pressure = st.selectbox("💼 Work Pressure", less_options, index=0)
@@ -40,13 +41,13 @@ with st.container():
     work_study_hours = st.selectbox("⏳ Study/Work Hours", more_options, index=0)
     financial_stress = st.selectbox("💰 Financial Stress Level", financial_options, index=0)
     #mental_health_history = st.selectbox("🧠 Mental Health History", yes_no, index=0)
-    age = st.number_input("🎂 Age", min_value=1, max_value=122, value=18)
+    age = st.number_input("🎂 Age", min_value=1, max_value=122, value=1)
     #gender = st.selectbox("⚧ Gender", gender_options, index=0)
 
     st.markdown('</div>', unsafe_allow_html=True)  # End input container
 
 # Save responses if gender is selected
-if age != '1':
+if age != 1:
     data = [age, academic_pressure, work_pressure, gpa, study_satisfaction, job_satisfaction, suicidal_thoughts, work_study_hours, financial_stress]
     with open('pickle.pkl', 'wb') as file:
         p.dump(data, file)
@@ -55,10 +56,41 @@ if age != '1':
 
     # Navigation Buttons
     col1, col2 = st.columns(2)
-    with col1:
-        st.page_link("pages/3Prediction.py", label="🔮 View Prediction", help="Check your results")
-    with col2:
-        st.page_link("1Home.py", label="🏠 Home", help="Go back to home page")
+    # with col1:
+    #     st.page_link("pages/3Prediction.py", label="🔮 View Prediction", help="Check your results")
+    # with col2:
+    #     st.page_link("1Home.py", label="🏠 Home", help="Go back to home page")
+
+    # Custom Styling
+    st.markdown("""
+        <style>
+            .stApp {background-color: black;}
+            .title {text-align: center; font-size: 28px; font-weight: bold; color: #3c6382;}
+            .card {background-color: black; padding: 20px; border-radius: 10px; 
+                box-shadow: 0px 0px 10px rgba(0,0,0,0.1); margin: 20px 0;}
+            .btn-container {text-align: center;}
+        </style>
+    """, unsafe_allow_html=True)
+
+    # Load Data
+    with open('pickle.pkl', 'rb') as file:
+        loaded_data = p.load(file)
+
+    # Display Title
+    st.markdown('<h2 class="title">📊 Questionnaire Results</h2>', unsafe_allow_html=True)
+
+    # Navigation Button
+    st.markdown('<div class="btn-container">', unsafe_allow_html=True)
+    st.subheader("Results: ")
+    if (pdp.predict_depression(loaded_data)):
+        st.write ("Our model suggests that your behaviors may indicate a potential concern. However, please remember that this is not a substitute for professional evaluation. Your well-being is most important, and we strongly encourage you to seek guidance from a qualified healthcare professional if you suspect that you are suffering from depression, anxiety, or mental health issues.")
+    else: 
+        st.write ("Our model suggests that your behaviors don't indicate a potential concern. However, please remember that this is not a substitute for professional evaluation. Your well-being is most important, and we strongly encourage you to seek guidance from a qualified healthcare professional if you suspect that you are suffering from depression, anxiety, or mental health issues.")
+    st.page_link("pages/3Resources.py", label="Resources", help="View resources")
+
+
+    # st.page_link("pages/2Questionnaire.py", label="✏️ Edit Answers", help="Modify your responses")
+    st.markdown('</div>', unsafe_allow_html=True)
 
 else:
     st.warning("⚠️ Please select your age before proceeding.")
