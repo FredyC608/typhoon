@@ -34,3 +34,13 @@ st.write(
 
 # Link to Questionnaire
 st.page_link("pages/2Questionnaire.py", label="To Survey")
+
+st.image(caption="Age correlation with depression", image="Graphs/Age_Depression.png")
+st.image(caption="Academic Pressure correlation with depression", image="Graphs/APress_Depression.png")
+st.image(caption="Diet correlation with depression", image = "Graphs/Diet_Depression.png")
+st.image(caption = "Gender correlation with depression", image = "Graphs/Gender_Depression.png")
+st.image(caption = "Job Satisfaction correlation with depression", image = "graphs/JobSat_Depression.png")
+st.image(caption = "Sleep Duration correlation with depression", image = "Graphs/SleepDur_Depression.png")
+st.image(caption = "Study Satisfaction correlation with depression", image = "Graphs/StudySat_Depression.png")
+st.image(caption = "Work and Study Hours correlation with depression", image = "Graphs/WorkStudyHours_Depression.png")
+st.image(caption = "Work Pressure correlation with depression", image = "Graphs/WPress_Depression.png")
