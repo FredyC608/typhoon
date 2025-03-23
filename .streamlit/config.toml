@@ -2,6 +2,6 @@
 base="dark"  # Use "light" for a white background
 primaryColor="white"  # Purple accent color
 backgroundColor="#1A1A1D"  # Dark background
-secondaryBackgroundColor="#17252A"  # Dark gray for widgets
+secondaryBackgroundColor="#500000"  # Dark gray for widgets
 textColor="#ffffff"  # White text
 font="sans serif"
