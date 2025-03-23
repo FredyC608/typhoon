@@ -1,5 +1,6 @@
 import streamlit as st
 import pickle as p
+import predict_depression as pdp
 
 # Custom Styling
 st.markdown("""
@@ -22,11 +23,11 @@ st.markdown('<p class="title">📊 Questionnaire Results</p>', unsafe_allow_html
 
 # Display Loaded Data
 st.markdown('<div class="card">', unsafe_allow_html=True)
-st.write(loaded_data)
-
 st.markdown('</div>', unsafe_allow_html=True)
 
 # Navigation Button
 st.markdown('<div class="btn-container">', unsafe_allow_html=True)
+st.write(pdp.predict_depression(loaded_data))
+
 st.page_link("pages/2Questionnaire.py", label="✏️ Edit Answers", help="Modify your responses")
 st.markdown('</div>', unsafe_allow_html=True)
