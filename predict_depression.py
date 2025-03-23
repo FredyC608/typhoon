@@ -45,9 +45,9 @@ def predict_depression(user_input):
     return user_pred[0]
 
 # Example usage
-# if __name__ == "__main__":
-#     user_input = [
-#         25, 3, 2, 3.5, 4, 3, 'No', 6, 2
-#     ]
-#     prediction = predict_depression(user_input)
-#     print(f"Predicted Depression: {prediction}")
+if __name__ == "__main__":
+    user_input = [
+        25, 3, 2, 3.5, 4, 3, 'No', 6, 2
+    ]
+    prediction = predict_depression(user_input)
+    print(f"Predicted Depression: {prediction}")

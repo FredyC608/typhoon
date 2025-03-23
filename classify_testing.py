@@ -7,7 +7,7 @@ from sklearn.metrics import confusion_matrix
 from sklearn.metrics import f1_score
 from sklearn.metrics import precision_score
 
-df = pd.read_csv("PythonWorks\PythonBasics\Datathon\\final_depression_dataset_1.csv")
+df = pd.read_csv("final_depression_dataset_1.csv")
 df.dataframeName = 'final_depression_dataset_1.csv'
 df.info()
 # Clean Data

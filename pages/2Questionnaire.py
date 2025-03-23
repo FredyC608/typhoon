@@ -47,36 +47,36 @@ yesno = pd.DataFrame({
 })
 
 academicpressure = st.selectbox(
-    "How much academic pressure do you feel", options['first column'], key="acpres",
+    "How much academic pressure do you feel", financialoptions['first column'], key="acpres",
     index = 0
 )
 
 workpressure = st.selectbox(
-    "How much work pressure do you feel", lessoptions['first column'], key="wrkpres",
+    "How much work pressure do you feel", financialoptions['first column'], key="wrkpres",
     index = 0
 )
 
-gpa = st.number_input("What is your GPA?", key = "gpa", value = 0, min_value=0, max_value=4) 
+gpa = st.number_input("What is your GPA (4.0 Scale)?", key = "gpa", value = 0, min_value=0, max_value=4) 
 
 studysatisfaction = st.selectbox(
-    "How satisfied are you with your studies?", options['first column'], key="stdysat",
+    "How satisfied are you with your studies?", financialoptions['first column'], key="stdysat",
     index = 0
 )
 
 jobsatisfaction = st.selectbox(
-    "How satisfied are you with your job?", joboptions['first column'],
+    "How satisfied are you with your job?", financialoptions['first column'],
     index = 0
 )
 
-sleep = st.selectbox(
-    "How many hours of sleep do you get?", sleepoptions['first column'],
-    index = 0
-)
+# sleep = st.selectbox(
+#     "How many hours of sleep do you get?", sleepoptions['first column'],
+#     index = 0
+# )
 
-diet = st.selectbox(
-    "How would you describe your diet?", dietoptions['first column'],
-    index = 0
-)
+# diet = st.selectbox(
+#     "How would you describe your diet?", dietoptions['first column'],
+#     index = 0
+# )
 
 suicidalthoughts = st.selectbox(
     "Have you ever had suicidal thoughts?", yesno['first column'],
@@ -93,21 +93,21 @@ financialstress = st.selectbox(
     index = 0
 )
 
-history = st.selectbox(
-    "Do you have a history of mental illness?", yesno['first column'],
-    index = 0
-)
-
+# history = st.selectbox(
+#     "Do you have a history of mental illness?", yesno['first column'],
+#     index = 0
+# )
+age = 0
 age = st.number_input("What is your age?", min_value=1, max_value=122, value = 1)
 
-gender = st.selectbox(
-    "Gender:" , genderoptions['first column'],
-    index = 0
-)
+# gender = st.selectbox(
+#     "Gender:" , genderoptions['first column'],
+#     index = 0
+# )
 
 # Save results of query into a pickle
-data = [gender, age, academicpressure, workpressure, gpa, studysatisfaction, jobsatisfaction, 
-        sleep, diet, suicidalthoughts, workstudy, financialstress, history]
+data = [age, academicpressure, workpressure, gpa, studysatisfaction, jobsatisfaction
+        ,suicidalthoughts, workstudy, financialstress]
 # for i in range(0,12):
 #     if data[i] == False:
 #         if type(data[i]) == int:
@@ -118,7 +118,7 @@ data = [gender, age, academicpressure, workpressure, gpa, studysatisfaction, job
 #         continue
 
 
-if (gender != 'Select'):
+if (age != 1):
     with open('pickle.pkl', 'wb') as file:
         #empty_data = {}
         #p.dump(empty_data, file)
