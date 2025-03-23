@@ -19,18 +19,18 @@ def predict_depression(user_input):
     user_pred = rfc_important.predict(user_df)
     return user_pred[0]
 
-# Example usage
-if __name__ == "__main__":
-    user_input = {
-        'Age': 25,
-        'Academic Pressure': 3,
-        'Work Pressure': 2,
-        'CGPA': 7.5,
-        'Study Satisfaction': 4,
-        'Job Satisfaction': 3,
-        'Have you ever had suicidal thoughts ?': 'No',
-        'Work/Study Hours': 6,
-        'Financial Stress': 2
-    }
-    prediction = predict_depression(user_input)
-    print(f"Predicted Depression: {prediction}")
+# # Example usage
+# if __name__ == "__main__":
+#     user_input = {
+#         'Age': 25,
+#         'Academic Pressure': 3,
+#         'Work Pressure': 2,
+#         'CGPA': 7.5,
+#         'Study Satisfaction': 4,
+#         'Job Satisfaction': 3,
+#         'Have you ever had suicidal thoughts ?': 'No',
+#         'Work/Study Hours': 6,
+#         'Financial Stress': 2
+#     }
+#     prediction = predict_depression(user_input)
+#     print(f"Predicted Depression: {prediction}")
