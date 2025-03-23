@@ -6,7 +6,7 @@ import predict_depression as pdp
 st.markdown("""
     <style>
         .stApp {background-color: black;}
-        .title {text-align: center; font-size: 28px; font-weight: bold; color: #3c6382;}
+        .title {text-align: center; font-size: 28px; font-weight: bold; color: black;}
         .card {background-color: black; padding: 20px; border-radius: 10px; 
                box-shadow: 0px 0px 10px rgba(0,0,0,0.1); margin: 20px 0;}
         .btn-container {text-align: center;}

@@ -4,7 +4,6 @@ import pickle as p
 # Custom CSS for styling
 st.markdown("""
     <style>
-        .stApp {background-color: black;}
         .title {text-align: center; font-size: 32px; font-weight: bold; color: #3c6382;}
         .info {color: #555; font-size: 16px; text-align: center;}
         .input-container {border-radius: 10px; padding: 15px; background-color: white; box-shadow: 0px 0px 10px rgba(0,0,0,0.1);}

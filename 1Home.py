@@ -1,12 +1,36 @@
 import streamlit as st
 
-st.header("Mental Health Questionaire")
+# Title
+st.markdown(
+    '<p style=" text-align:center; font-size:4em;">Mental Health on Campus</p>', 
+    unsafe_allow_html=True
+)
 
-st.write("Mental health is a huge issue for college students, as this is a very different time for students."
-" Not only are students in a very different environment, some may struggle academically or financially in a way "
-"they aren't used to. Sources range from 27% to about 41% of students reporting depression. This questionnaire exists to identify if there is a problem and possibly offer some advice."
-"If you believe yourself to be in need of mental health, do not hesitate to call the national suicide hotline at"
-"the number 988. If you are a Texas A&M student seeking mental health assistnace, do not hesitate to call the number "
-"(979)458-4584.")
+# Purpose Section
+st.subheader("Purpose")
+st.write(
+    "Mental health is a crucial aspect of overall well-being, yet it is often overlooked—especially among college students. "
+    "The transition to college brings new challenges, including academic pressure, social adjustments, and financial stress, "
+    "all of which can impact mental health. The purpose of this initiative is to raise awareness, identify students who may be struggling, "
+    "and provide resources for support. By participating in this questionnaire, students can reflect on their mental health and explore potential next steps "
+    "toward seeking help if needed."
+)
 
-st.page_link("pages/2Questionnaire.py", label = "To Survey")
+# Problem Section
+st.subheader("Problem")
+st.write(
+    "Mental health is a significant issue for college students, as this is a major transitional period in their lives. "
+    "Not only are students adapting to a new environment, but some may also struggle academically or financially in ways they haven't before. "
+    "Studies show that between 27% and 41% of students report experiencing depression. "
+    "This questionnaire along with the accompanying data visualizations aims to identify potential mental health concerns and provide helpful resources. "
+)
+
+# Emergency Resources
+st.write(
+    "**If you believe you need immediate mental health support, please reach out:**\n\n"
+    "- **National Suicide Hotline:** Dial **988**\n"
+    "- **Texas A&M Student Mental Health Assistance:** Call **(979) 458-4584**"
+)
+
+# Link to Questionnaire
+st.page_link("pages/2Questionnaire.py", label="To Survey")
